@@ -1,0 +1,21 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+.container{
+    block-size:100vh;
+    inline-size:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.scine{
+    block-size: 100vh;
+    inline-size: 960px;
+    border: 75px solid green;
+    border-image: url(assets/border.svg) 33% round;
+}
