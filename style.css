@@ -11,13 +11,12 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    transition: 1s;
     perspective: 900px;
 }
 
 .scine{
     block-size: 80vh;
-    inline-size: 960px;
+    inline-size: 1000px;
     border: 75px solid black;
     border-image: url(assets/border.svg) 33% round;
     overflow: hidden;
@@ -33,4 +32,18 @@ transform:
  ;
 
  transition:3s;
+}
+
+.back{
+  block-size:calc(100vh - 150px);
+  inline-size: calc(1000px - 150px);
+  background-image:url(assets/background.svg);
+  overflow: hidden;
+}
+
+.scine:hover .back{
+  box-shadow: inset -50px 70px 8px rgba(0,0,0, .8)
+  ;
+  background-position: 30% 10%;
+  transition: 3s;
 }
