@@ -3,6 +3,7 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
+  overflow:hidden;
 }
 
 
@@ -14,40 +15,39 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    perspective: 900px; /* so the effects applied to .scene(or any other child of container) have perspective */
-    overflow:hidden;
+    perspective: 900px; so the effects applied to .scene have perspective
+    
 }
 
-.scene{
+#scene{
     max-block-size: 80vh;
     max-inline-size: 1000px;
+    min-inline-size:400px;
     border: 75px solid black;
+    /* the following line takes care  of the custom border around scene element.
+    33% tells the browser to divide the image into 9 equal parts, and use the corner ones as corners and the outmost ones as borders.
+    in this case it works perfectly cause I've designed the image kipping it in mind. The round property tells the browser to use tiling method which nicely fills up the whole space whatever it might be by slicing the image and simlessly conecting those slices if neccessery*/
     border-image: url(assets/border.svg) 33% round;
-    overflow: hidden;
-    /* background-color: gray; */
- 
-   
+    
 }
 
-.scene:hover {
+#scene:hover {
 transform:
  rotateY(25deg)
- rotateX(65deg) 
+ rotateX(65deg) /*Y axis is the one parallel to  screen sides, and the X is one parallel to screen top and bottom*/
  ;
 
- transition:3s;
+  transition:3s; /*this part is responsible for the speed of the change above  */
 }
 
-.back{
-  block-size:calc(100vh - 150px);
-  inline-size: calc(1000px - 150px);
+#back{
+  block-size:100vh;
+  inline-size:calc(100vh - 150px); /*this somehow  fixes the issue when the right inset shadow disapeares*/
   background-image:url(assets/background.svg);
-  overflow: hidden;
 }
 
-.scene:hover .back{
-  box-shadow: inset -50px 70px 8px rgba(0,0,0, .8)
-  ;
+#scene:hover #back{
+  box-shadow: inset -50px 70px 8px rgba(0,0,0, .8);
   background-position: 30% 10%;
-  transition: 3s;
+  transition: 5s;
 }
