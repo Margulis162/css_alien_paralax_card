@@ -1,9 +1,12 @@
+/* default resets */
 *{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
 
+
+/* classes */
 .container{
     block-size:100vh;
     inline-size:100vw;
@@ -11,12 +14,13 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    perspective: 900px;
+    perspective: 900px; /* so the effects applied to .scene(or any other child of container) have perspective */
+    overflow:hidden;
 }
 
-.scine{
-    block-size: 80vh;
-    inline-size: 1000px;
+.scene{
+    max-block-size: 80vh;
+    max-inline-size: 1000px;
     border: 75px solid black;
     border-image: url(assets/border.svg) 33% round;
     overflow: hidden;
@@ -25,7 +29,7 @@
    
 }
 
-.scine:hover {
+.scene:hover {
 transform:
  rotateY(25deg)
  rotateX(65deg) 
@@ -41,7 +45,7 @@ transform:
   overflow: hidden;
 }
 
-.scine:hover .back{
+.scene:hover .back{
   box-shadow: inset -50px 70px 8px rgba(0,0,0, .8)
   ;
   background-position: 30% 10%;
