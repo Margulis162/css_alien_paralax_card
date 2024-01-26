@@ -14,40 +14,60 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    background-color: aliceblue;
+    perspective: 900px; /*so the effects applied to .scene have perspective*/
     background-color: black;
-    perspective: 900px; so the effects applied to .scene have perspective
     
 }
 
-#scene{
-    max-block-size: 80vh;
-    max-inline-size: 1000px;
-    min-inline-size:400px;
+ #scene{
+    block-size: 350px;
+    inline-size: 450px;
+    background-color: aliceblue;
+    position:absolute;
     border: 75px solid black;
-    /* the following line takes care  of the custom border around scene element.
-    33% tells the browser to divide the image into 9 equal parts, and use the corner ones as corners and the outmost ones as borders.
-    in this case it works perfectly cause I've designed the image kipping it in mind. The round property tells the browser to use tiling method which nicely fills up the whole space whatever it might be by slicing the image and simlessly conecting those slices if neccessery*/
     border-image: url(assets/border.svg) 33% round;
-    
+    background-color: black;
 }
 
 #scene:hover {
 transform:
  rotateY(25deg)
- rotateX(65deg) /*Y axis is the one parallel to  screen sides, and the X is one parallel to screen top and bottom*/
+ rotateX(25deg) 
  ;
-
-  transition:3s; /*this part is responsible for the speed of the change above  */
+  box-shadow: -10px 10px 34px rgba(0,255, 255,.4);
+  transition:3s; 
 }
-
 #back{
   block-size:100vh;
-  inline-size:calc(100vh - 150px); /*this somehow  fixes the issue when the right inset shadow disapeares*/
+  inline-size:100vw; 
   background-image:url(assets/background.svg);
+  
 }
 
+#scene:hover #back{
+  box-shadow: inset -20px 20px 8px rgba(60,40,60, .2);
+  background-position: 30% 10%;
+  transition: 5s;
+}
+
+#alien{
+  max-block-size: 200px;
+  position:absolute;
+  right:50%;
+  top:50%;
+  transform:
+  translate(50%, -65%)
+}
+/*
 #scene:hover #back{
   box-shadow: inset -50px 70px 8px rgba(0,0,0, .8);
   background-position: 30% 10%;
   transition: 5s;
 }
+
+#scene:hover #back #alien{
+  transform:
+  rotateY(none),
+  rotateX(none);
+} */
