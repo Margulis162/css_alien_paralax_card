@@ -11,10 +11,7 @@
 .container{
     block-size:100vh;
     inline-size:100vw;
-    display:flex;
-    justify-content: center;
     align-items: center;
-    background-color: aliceblue;
     perspective: 900px; /*so the effects applied to .scene have perspective*/
     background-color: black;
     
@@ -23,11 +20,17 @@
  #scene{
     block-size: 350px;
     inline-size: 450px;
-    background-color: aliceblue;
     position:absolute;
     border: 75px solid black;
     border-image: url(assets/border.svg) 33% round;
     background-color: black;
+    position:absolute;
+    top: 20%;
+    left:30%;
+    /* transform: */
+    /* translate(-50%, -50%); */
+  
+    
 }
 
 #scene:hover {
@@ -37,37 +40,24 @@ transform:
  ;
   box-shadow: -10px 10px 34px rgba(0,255, 255,.4);
   transition:3s; 
+  
 }
 #back{
-  block-size:100vh;
-  inline-size:100vw; 
+  block-size:200px;
+  inline-size:300px; 
   background-image:url(assets/background.svg);
-  
 }
 
 #scene:hover #back{
-  box-shadow: inset -20px 20px 8px rgba(60,40,60, .2);
+  box-shadow:  -20px 20px 15px rgba(0,0,0, .7) inset;
   background-position: 30% 10%;
   transition: 5s;
 }
 
 #alien{
-  max-block-size: 200px;
+  block-size:350px;
+  z-index: 1;
   position:absolute;
-  right:50%;
-  top:50%;
-  transform:
-  translate(50%, -65%)
+  /* top: 20%;
+  left:30%; */
 }
-/*
-#scene:hover #back{
-  box-shadow: inset -50px 70px 8px rgba(0,0,0, .8);
-  background-position: 30% 10%;
-  transition: 5s;
-}
-
-#scene:hover #back #alien{
-  transform:
-  rotateY(none),
-  rotateX(none);
-} */
