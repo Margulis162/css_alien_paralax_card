@@ -3,50 +3,61 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
-  overflow:hidden;
 }
 
 body{
   background-color: black;
 }
+
 /* classes */
 .container{
   block-size: 350px;
   inline-size: 450px;
+
   position:absolute;
   top: 50%;
   left:50%;
   transform:
-  translate(-50%, -50%);
-    perspective: 900px; /*so the effects applied to .scene have perspective*/
-    background-color: black;
-    overflow: visible;
+  translate(-50%, -60%);
+
+  perspective: 900px; /*so the effects applied to .scene have perspective lover */
+  background-color: black;
+  overflow: visible;
 }
 
+
+/* id's */
  #scene{
-   
     border: 75px solid black;
-    border-image: url(assets/border.svg) 33% round;
+    border-radius: 20px/10px;
     background-color: black;
-    position:absolute;
- 
-  
-    
 }
 
-#scene:hover {
-transform:
- rotateY(25deg)
- rotateX(25deg) 
- ;
-  box-shadow: -10px 10px 34px rgba(0,255, 255,.4);
-  transition:3s; 
-  
-}
 #back{
   block-size:200px;
   inline-size:300px; 
   background-image:url(assets/background.svg);
+}
+
+#alien{
+  block-size:280px;
+  position:absolute;
+  top: 60%;
+  left:65%;
+
+  transform:
+  translate(-35%, -70%);
+  
+  pointer-events: none;
+}
+
+/* hover's */
+#scene:hover {
+transform:
+  rotateY(25deg)
+  rotateX(25deg);
+box-shadow: -10px 10px 34px rgba(0,255, 255,.4);
+transition:3s; 
 }
 
 #scene:hover #back{
@@ -55,10 +66,10 @@ transform:
   transition: 5s;
 }
 
-#alien{
-  block-size:350px;
-  z-index: 1;
-  position:absolute;
-  /* top: 20%;
-  left:30%; */
+.container:hover #alien{
+  transition:2s;
+  transform:
+  translate(-35%, -70%) 
+  scale(1.2)
+  rotateX(-25deg);
 }
