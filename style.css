@@ -6,29 +6,30 @@
   overflow:hidden;
 }
 
-
+body{
+  background-color: black;
+}
 /* classes */
 .container{
-    block-size:100vh;
-    inline-size:100vw;
-    align-items: center;
+  block-size: 350px;
+  inline-size: 450px;
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform:
+  translate(-50%, -50%);
     perspective: 900px; /*so the effects applied to .scene have perspective*/
     background-color: black;
-    
+    overflow: visible;
 }
 
  #scene{
-    block-size: 350px;
-    inline-size: 450px;
-    position:absolute;
+   
     border: 75px solid black;
     border-image: url(assets/border.svg) 33% round;
     background-color: black;
     position:absolute;
-    top: 20%;
-    left:30%;
-    /* transform: */
-    /* translate(-50%, -50%); */
+ 
   
     
 }
