@@ -73,3 +73,29 @@ transition:3s;
   scale(1.2)
   rotateX(-25deg);
 }
+
+@media(max-width: 500px){
+  .container{
+    block-size: 120px;
+    inline-size: 210px;
+  }
+  
+
+    #scene{
+      border: 35px solid black;
+      border-radius: 20px/10px;
+      background-color: black;
+  }
+  
+  #back{
+    block-size:120px;
+    inline-size:150px; 
+    background-image:url(assets/background.svg);
+  }
+  
+  #alien{
+    block-size:180px;
+    position:absolute;
+  
+  }
+}
